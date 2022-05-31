@@ -1,0 +1,99 @@
+@import "~./variables";
+@import "../features/Sidebar/sidebar.scss";
+.mt-10{
+    margin-top:10px !important
+}
+.ml-10{
+    margin-left:10px !important
+}
+
+.mt-30{
+    margin-top:30px !important
+}
+.mt-5{
+    margin-top: 5px;
+}
+.pl-5{
+    padding-left: 5px;
+}
+.my-10{
+    margin: 10px 0px;
+}
+.mx-3{
+    margin: 0px 3px;
+}
+.red{
+    color: #F23030 !important
+}
+.green{
+    color: #3F8254 !important
+}
+.flex{
+    display: flex;
+}
+.justify-center{
+    justify-content: center;
+}
+.p-10{
+    padding: 10px !important;
+}
+.pr-2{
+    padding-right: 2px;
+}
+.justify-space-between{
+    justify-content: space-between;
+}
+.no-wrap{
+    flex-wrap: nowrap;
+}
+.pt-10{
+    padding-top: 10px !important;
+}
+.mr-10{
+    margin-right:10px;
+}
+.ml-10{
+    margin-left:10px;
+}
+
+.pointer{
+    cursor: pointer !important;
+}
+.ml-5{
+    margin-left: 5px !important;
+}
+.mr-5{
+    margin-right: 5px !important;
+}
+.mx-3{
+    margin: 3px 0px;
+}
+.br-2{
+    border-radius: 2px;
+}
+.p-2{
+    padding:2px;
+}
+.mb-5{
+    margin-bottom: 5px !important;
+}
+//fonts
+
+.fw-light{
+    font-weight: light;
+}
+.space-between{
+    justify-content: space-between;
+}
+.align-center{
+    align-items: center;
+}
+.justify-content-center{
+    justify-content: center;
+}
+.flex-column{
+    flex-direction: column;
+}
+.white-text{
+    color:white
+}

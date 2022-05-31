@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+     // "@styling/*": ["./styling/*"],
+     "@/components/*": ["components/*"],
+     "@/styling/*": ["styling/*"],
+    }
+  },
+}
