@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import fs from "fs";
+import path from "path";
 var csrf = require("csurf");
 var bodyParser = require("body-parser");
 const morgan = require("morgan");
@@ -35,7 +36,10 @@ app.get("/api/csrf-token", csrfProtection, (req, res) => {
 });
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+  app.use(express.static(path.join(__dirname, "/FE/build")));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "FE", "build", "index.html"));
+  });
 }
 const port = process.env.PORT || 5001;
 app.listen(port, () => {
