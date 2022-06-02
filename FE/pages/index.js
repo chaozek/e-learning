@@ -35,7 +35,7 @@ export async function getServerSideProps(context) {
     const { data } = await axios.get(
       process.env.NODE_ENV === "development"
         ? `http://localhost:3000/api/courses/${req.cookies.user}`
-        : `${process.env.NEXT_PUBLIC_API}/api/courses/${req.cookies.user}`
+        : `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/courses/${req.cookies.user}`
     );
     return {
       props: {
@@ -51,7 +51,7 @@ export async function getServerSideProps(context) {
     const { data } = await axios.get(
       process.env.NODE_ENV === "development"
         ? `http://localhost:3000/api/courses/`
-        : `${process.env.NEXT_PUBLIC_API}/api/courses`
+        : `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/courses`
     );
     return {
       props: {
