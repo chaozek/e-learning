@@ -8,9 +8,9 @@
   },
   "scripts": {
     "start": "nodemon -r esm server.js",
-    "build": "cd FE && npm run build",
+    "build": "cd FE && npm run next build",
     "install-client": "cd FE && npm install",
-    "heroku-postbuild": "npm run install-client && npm run build"
+    "heroku-postbuild": "npm run install-client && npm run next build"
   },
   "keywords": [],
   "author": "",
