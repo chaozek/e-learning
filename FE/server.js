@@ -9,7 +9,12 @@ const hostname = "localhost";
 const app = next({ dev, hostname });
 const handle = app.getRequestHandler();
 const cookieParser = require("cookie-parser");
-
+/* import { io } from "socket.io-client";
+ */
+/* const socket = io("ws://localhost/8000",  cors: {
+  origin: "https://example.com",
+  methods: ["GET", "POST"]
+}, { transports: ["websocket"] }); */
 app
   .prepare()
   .then(() => {

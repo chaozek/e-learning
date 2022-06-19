@@ -1,11 +1,40 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { Homepage } from "../features/pages/Homepage_page";
 import Layout from "../Layouts/Layout";
 import { Context } from "context";
 import { useRouter } from "next/router";
+import { useRef } from "react";
+import { io } from "socket.io-client";
+
 const Index = ({ courses, req, cookies }) => {
   const router = useRouter();
+  const [response, setResponse] = useState("");
+  const [socket, setSocket] = useState("");
+
+  useEffect(() => {
+    setSocket(
+      io.connect(
+        "localhost:8000",
+        { transports: ["websocket"] },
+        {
+          path: "/socket/index.js",
+          cors: {
+            origin: "http://localhost:8000",
+            methods: ["GET", "POST"],
+          },
+        }
+      )
+    );
+  }, []);
+
+  useEffect(() => {
+    socket &&
+      socket?.on("welcome", (message) => {
+        console.log(message);
+      });
+  }, [socket]);
+  console.log(socket, "socket");
   useEffect(() => {
     console.log(req, "REQ", cookies, "COK");
     if (req && !cookies) {
@@ -23,7 +52,7 @@ const Index = ({ courses, req, cookies }) => {
 
   return (
     <Layout>
-      <Homepage courses={courses} header="Courses" />;
+      <Homepage response={response} courses={courses} header="Courses" />;
     </Layout>
   );
 };

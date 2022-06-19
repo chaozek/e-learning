@@ -5,10 +5,11 @@ import Card from "./Card";
 import styled from "styled-components";
 import { devices } from "responsive/devices";
 
-const CardList = ({ courses, header = "Header", myCourses }) => {
+const CardList = ({ courses, header = "Header", myCourses, response }) => {
   return (
     <>
       <CardHeader className="mt-5">{header}</CardHeader>
+      {response}
       <CardListWrapper>
         {courses &&
           courses.map((course, i) => (

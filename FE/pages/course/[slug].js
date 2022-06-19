@@ -330,7 +330,9 @@ export const List = styled.div`
 `;
 
 export async function getServerSideProps({ query }) {
-  const { data } = await axios.get(`${process.env.API}/course/${query.slug}`);
+  const { data } = await axios.get(
+    `http://localhost:3000/api/course/${query.slug}`
+  );
 
   return {
     props: {
